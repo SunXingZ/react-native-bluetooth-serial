@@ -164,6 +164,13 @@ RCT_EXPORT_METHOD(writeHexToDevice:(NSString *)hexString
     }
 }
 
+RCT_EXPORT_METHOD(printQrCode:(NSString *)hexString
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejector:(RCTPromiseRejectBlock)reject)
+{
+    resolve((id)kCFBooleanTrue);
+}
+
 -(NSData*) hexToBytes:(NSString *)hexString {
     hexString = [hexString stringByReplacingOccurrencesOfString:@" " withString: @""];
     NSMutableData* data = [NSMutableData data];
