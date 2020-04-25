@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/rusel1989/react-native-bluetooth-serial#readme",
   "dependencies": {
-    "buffer": "^4.6.0"
+    "buffer": "^4.6.0",
+    "lodash": "^4.17.15"
   },
   "peerDependencies": {
     "react-native": ">=0.40"

@@ -164,7 +164,7 @@ RCT_EXPORT_METHOD(writeHexToDevice:(NSString *)hexString
     }
 }
 
-RCT_EXPORT_METHOD(printQrCode:(NSString *)hexString
+RCT_EXPORT_METHOD(printQrCode:(NSString *)qrCode
                   resolver:(RCTPromiseResolveBlock)resolve
                   rejector:(RCTPromiseRejectBlock)reject)
 {
