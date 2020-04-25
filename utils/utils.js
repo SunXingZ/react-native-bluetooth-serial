@@ -24,11 +24,11 @@ function getSpace(len) {
 const stringToHex = (str) => {
     let val = ''
     for (let i = 0; i < str.length; i++) {
-        if (val === '') {
-            val = str.charCodeAt(i).toString(16)
-        } else {
-            val += ' ' + str.charCodeAt(i).toString(16)
+        let hexString = str.charCodeAt(i).toString(16);
+        if (hexString.length == 1) {
+            hexString = "0" + hexString;
         }
+        val += val == "" ? hexString : " " + hexString;
     }
     return val
 }
