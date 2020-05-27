@@ -18,6 +18,7 @@ const Common = {
   FONT_SMALL: "1B 4D 01",//小号字体 9x17
   FONT_NORMAL: "1B 4D 00",//正常 12x24
   FONT_BOLD: "1B 45 01",//粗体
+  FONT_BIG: "1D 21 01 10", // 字体加大
 
   FONT_HEIGHT_TIMES: '1B 21 10',
   FONT_WIDTH_TIMES: '1B 21 20',
@@ -94,7 +95,7 @@ const keyValue = (name, value, wordNumber = Config.wordNumber) => {
 }
 
 const getQrCodeHexString = (qrCode) => {
-  let data = [],store_len = qrCode.length + 3,store_pL = store_len % 256,store_pH = store_len / 256 ;
+  let data = [], store_len = qrCode.length + 3, store_pL = store_len % 256, store_pH = store_len / 256;
   const modelQR = [0x1d, 0x28, 0x6b, 0x04, 0x00, 0x31, 0x41, 0x32, 0x00];
   const sizeQR = [0x1d, 0x28, 0x6b, 0x03, 0x00, 0x31, 0x43, 0x08];
   const errorQR = [0x1d, 0x28, 0x6b, 0x03, 0x00, 0x31, 0x45, 0x31];
@@ -109,7 +110,7 @@ const getQrCodeHexString = (qrCode) => {
   return Util.stringToHex(byteString);
 }
 
-const byteMerger = ( bytesA, bytesB) => {
+const byteMerger = (bytesA, bytesB) => {
   let bytes = bytesA.concat(bytesB);
   return bytes;
 }
@@ -160,6 +161,9 @@ const ESC = {
   },
   fontBold() {
     writeHexToDevice(Common.FONT_BOLD);
+  },
+  fontBig() {
+    writeHexToDevice(Common.FONT_BIG);
   },
 
   fontHeightTimes() {
